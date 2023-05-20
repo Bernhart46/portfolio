@@ -1,4 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
+import NavComponent from "./components/nav";
+import "./app.scss";
 
 export default function App() {
   return (
@@ -11,6 +13,7 @@ export default function App() {
         <Route path="/contacts" element={<h1>Contacts</h1>} />
         <Route path="*" element={<Navigate to="/home" />} />
       </Routes>
+      <NavComponent />
     </>
   );
 }
