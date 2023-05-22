@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import "./index.scss";
+import "./nav-button-component.scss";
 import { exportObject } from "../../../assets";
 import { menuButtonNames } from "../other-navs";
 

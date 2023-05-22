@@ -1,5 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import NavComponent from "./components/nav";
+import NavComponent from "./components/nav/nav-component";
 import "./app.scss";
 
 export default function App() {
