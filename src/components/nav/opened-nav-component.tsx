@@ -21,12 +21,21 @@ const menuButtons: { title: menuButtonNames; to: string }[] = [
   },
 ];
 
-export function OpenedNavComponent({ isOn, setIsOn }: NavProps) {
+interface OpenedNavProps extends NavProps {
+  isMobile: boolean;
+}
+
+export function OpenedNavComponent(props: OpenedNavProps) {
+  const { isOn, setIsOn, isMobile } = props;
+  const classes = `opened-nav-component ${!isMobile || isOn ? "" : "off"}`;
+
+  const toggleIsOn = () => {
+    if (!isMobile) return;
+    setIsOn(!isOn);
+  };
+
   return (
-    <div
-      className={`opened-nav-component ${!isOn ? "off" : ""}`}
-      onClick={() => setIsOn(!isOn)}
-    >
+    <div className={classes} onClick={toggleIsOn}>
       {menuButtons.map((button) => {
         return <NavButtonComponent key={button.title} {...button} />;
       })}

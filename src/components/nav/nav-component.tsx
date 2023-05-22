@@ -16,7 +16,8 @@ export default function NavComponent() {
   return (
     <>
       <OpenedNavComponent
-        isOn={isMobile ? isOpenedOnMobile : true}
+        isOn={isOpenedOnMobile}
+        isMobile={isMobile}
         setIsOn={setIsOpenedOnMobile}
       />
       {isMobile && (
