@@ -16,7 +16,5 @@ $dark-theme: (
   "selected-font": #767676,
 );
 
-$breakpoints: (
-  "tablet": 768px,
-  "desktop": 1024px,
-);
+$breakpoint_tablet: 768px;
+$breakpoint_desktop: 1024px;

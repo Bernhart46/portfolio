@@ -1,13 +1,19 @@
 @use "../../../partials/global" as global;
+@use "../../../partials/navbar" as navbar;
 
 .nav-buttons {
-  width: 100vw;
+  width: navbar.$mobile_nav_width;
   height: 50px;
   line-height: 50px;
   font-size: 1.5rem;
   font-weight: 500;
   color: map-get(global.$light-theme, font-on-dark);
   text-decoration: none;
+
+  @media (min-width: global.$breakpoint_tablet) {
+    width: navbar.$tablet_nav_width;
+    max-width: navbar.$max_nav_width;
+  }
 
   display: flex;
   align-items: center;

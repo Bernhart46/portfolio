@@ -1,4 +1,5 @@
 @use "../../partials/global" as global;
+@use "../../partials/navbar" as navbar;
 
 @mixin nav-component($height) {
   background-color: map-get(global.$light-theme, primary-lighter);
@@ -7,8 +8,16 @@
   left: 0;
   bottom: 0;
   height: $height;
-  width: 100vw;
-  transition: 0.3s ease-in-out;
+  width: navbar.$mobile_nav_width;
+
+  @media (min-width: global.$breakpoint_tablet) {
+    width: navbar.$tablet_nav_width;
+    max-width: navbar.$max_nav_width;
+    position: static;
+    float: left;
+  }
+
+  transition: bottom 0.3s ease-in-out;
   transition-delay: 0.3s;
 }
 

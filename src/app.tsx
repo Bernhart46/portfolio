@@ -5,6 +5,7 @@ import "./app.scss";
 export default function App() {
   return (
     <>
+      <NavComponent />
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<h1>Home</h1>} />
@@ -13,7 +14,6 @@ export default function App() {
         <Route path="/contacts" element={<h1>Contacts</h1>} />
         <Route path="*" element={<Navigate to="/home" />} />
       </Routes>
-      <NavComponent />
     </>
   );
 }
