@@ -1,0 +1,46 @@
+@use "../../partials/global" as global;
+
+@mixin nav-component($height) {
+  background-color: map-get(global.$light-theme, primary-lighter);
+  color: map-get(global.$light-theme, font-on-dark);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: $height;
+  width: 100vw;
+  transition: 0.3s ease-in-out;
+  transition-delay: 0.3s;
+}
+
+.closed-nav-component {
+  @include nav-component(50px);
+
+  font-size: 1.5rem;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+
+  &.off {
+    bottom: -50px;
+    transition-delay: 0s;
+  }
+
+  & img {
+    width: 32px;
+  }
+}
+
+.opened-nav-component {
+  @include nav-component(100vh);
+
+  display: flex;
+  flex-direction: column;
+
+  &.off {
+    bottom: -100vh;
+    transition-delay: 0s;
+  }
+}
