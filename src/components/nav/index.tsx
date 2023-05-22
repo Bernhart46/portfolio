@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./index.scss";
 import { ClosedNavComponent, OpenedNavComponent } from "./other-navs";
 import { useMobileDetect } from "../../hooks/useMobileDetect";
