@@ -1,7 +1,8 @@
 import { useLocation } from "react-router-dom";
-import { chooseMenuIcon } from "./nav-button/nav-button-component";
-import { NavProps } from "./nav-component";
-import { menuButtonNames } from "./opened-nav-component";
+import { chooseMenuIcon } from "../nav-button/nav-button-component";
+import { NavProps } from "../nav-component";
+import { menuButtonNames } from "../opened-nav-component/opened-nav-component";
+import "./closed-nav-component.scss";
 
 //Minimized Nav Component for Mobile devices.
 export function ClosedNavComponent({ isOn, setIsOn }: NavProps) {

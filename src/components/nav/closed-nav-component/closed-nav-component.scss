@@ -1,0 +1,22 @@
+@use "../nav-component" as nav;
+
+.closed-nav-component {
+  @include nav.nav-component(50px);
+
+  font-size: 1.5rem;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+
+  &.off {
+    bottom: -50px;
+    transition-delay: 0s;
+  }
+
+  & img {
+    width: 32px;
+  }
+}

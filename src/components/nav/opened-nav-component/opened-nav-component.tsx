@@ -1,6 +1,7 @@
-import NavButtonComponent from "./nav-button/nav-button-component";
-import { NavProps } from "./nav-component";
-import { NavProfileComponent } from "./nav-profile/nav-profile-component";
+import NavButtonComponent from "../nav-button/nav-button-component";
+import { NavProps } from "../nav-component";
+import { NavProfileComponent } from "../nav-profile/nav-profile-component";
+import "./opened-nav-component.scss";
 
 export type menuButtonNames = "Home" | "Projects" | "Skills" | "Contacts";
 const menuButtons: { title: menuButtonNames; to: string }[] = [

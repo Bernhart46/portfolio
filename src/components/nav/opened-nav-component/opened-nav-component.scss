@@ -1,0 +1,19 @@
+@use "../nav-component" as nav;
+
+.opened-nav-component {
+  @include nav.nav-component(100vh);
+
+  display: flex;
+  flex-direction: column;
+
+  &.off {
+    bottom: -100vh;
+    transition-delay: 0s;
+  }
+}
+
+.nav-line {
+  margin: 15px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
