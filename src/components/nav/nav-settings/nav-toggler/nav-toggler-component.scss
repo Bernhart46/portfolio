@@ -1,0 +1,43 @@
+@use "../../../../partials/global" as global;
+@use "../../../../partials/navbar" as nav;
+
+.nav__toggler__container {
+  width: 90%;
+  max-width: nav.$max-nav-width;
+  height: 50px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 60fr 40fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.nav__toggler__label {
+  font-size: 1.5rem;
+}
+
+.nav__toggler__box {
+  background-color: map-get(global.$light-theme, font-on-dark);
+  aspect-ratio: 20 / 8;
+  width: 80%;
+  min-width: 75px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.nav__toggler__circle {
+  background-color: map-get(global.$light-theme, primary-lighter);
+  width: 35%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  transition: transform 0.5s ease-out;
+
+  &--left {
+    transform: translateX(10%);
+  }
+
+  &--right {
+    transform: translateX(175%);
+  }
+}
