@@ -1,6 +1,7 @@
 import NavButtonComponent from "../nav-button/nav-button-component";
 import { NavProps } from "../nav-component";
 import { NavProfileComponent } from "../nav-profile/nav-profile-component";
+import { NavSettingsComponent } from "../nav-settings/nav-settings-component";
 import "./opened-nav-component.scss";
 
 export type menuButtonNames = "Home" | "Projects" | "Skills" | "Contacts";
@@ -46,12 +47,11 @@ export function OpenedNavComponent(props: OpenedNavProps) {
           <hr className="nav__line" />
         </>
       )}
-      <div className="nav__button-container">
-        {menuButtons.map((button) => {
-          return <NavButtonComponent key={button.title} {...button} />;
-        })}
-      </div>
+      {menuButtons.map((button) => {
+        return <NavButtonComponent key={button.title} {...button} />;
+      })}
       <hr className="nav__line" />
+      <NavSettingsComponent />
     </div>
   );
 }
