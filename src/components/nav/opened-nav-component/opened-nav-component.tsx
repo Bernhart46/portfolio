@@ -46,11 +46,9 @@ export function OpenedNavComponent(props: OpenedNavProps) {
           <hr className="nav__line" />
         </>
       )}
-      <div className="nav__button-container">
-        {menuButtons.map((button) => {
-          return <NavButtonComponent key={button.title} {...button} />;
-        })}
-      </div>
+      {menuButtons.map((button) => {
+        return <NavButtonComponent key={button.title} {...button} />;
+      })}
       <hr className="nav__line" />
     </div>
   );
