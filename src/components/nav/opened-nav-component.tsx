@@ -1,5 +1,6 @@
 import NavButtonComponent from "./nav-button/nav-button-component";
 import { NavProps } from "./nav-component";
+import { NavProfileComponent } from "./nav-profile/nav-profile-component";
 
 export type menuButtonNames = "Home" | "Projects" | "Skills" | "Contacts";
 const menuButtons: { title: menuButtonNames; to: string }[] = [
@@ -36,9 +37,18 @@ export function OpenedNavComponent(props: OpenedNavProps) {
 
   return (
     <div className={classes} onClick={toggleIsOn}>
-      {menuButtons.map((button) => {
-        return <NavButtonComponent key={button.title} {...button} />;
-      })}
+      {!isMobile && (
+        <>
+          <NavProfileComponent />
+          <hr className="nav-line" />
+        </>
+      )}
+      <div className="nav-button-container">
+        {menuButtons.map((button) => {
+          return <NavButtonComponent key={button.title} {...button} />;
+        })}
+      </div>
+      <hr className="nav-line" />
     </div>
   );
 }
