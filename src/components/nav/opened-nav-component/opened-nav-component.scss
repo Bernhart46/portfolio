@@ -1,18 +1,18 @@
 @use "../nav-component" as nav;
 
-.opened-nav-component {
+.nav__component--opened {
   @include nav.nav-component(100vh);
 
   display: flex;
   flex-direction: column;
 
-  &.off {
+  &--off {
     bottom: -100vh;
     transition-delay: 0s;
   }
 }
 
-.nav-line {
+.nav__line {
   margin: 15px;
   margin-top: 30px;
   margin-bottom: 30px;

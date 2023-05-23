@@ -1,8 +1,8 @@
 @use "../../../partials/global" as global;
 @use "../../../partials/navbar" as navbar;
 
-.nav-buttons {
-  width: navbar.$mobile_nav_width;
+.nav__button {
+  width: navbar.$mobile-nav-width;
   height: 50px;
   line-height: 50px;
   font-size: 1.5rem;
@@ -10,9 +10,9 @@
   color: map-get(global.$light-theme, font-on-dark);
   text-decoration: none;
 
-  @media (min-width: global.$breakpoint_tablet) {
-    width: navbar.$tablet_nav_width;
-    max-width: navbar.$max_nav_width;
+  @media (min-width: global.$breakpoint-tablet) {
+    width: navbar.$tablet-nav-width;
+    max-width: navbar.$max-nav-width;
   }
 
   display: flex;
@@ -36,6 +36,6 @@
   }
 }
 
-.nav-button-icon {
+.nav__button-icon {
   width: 32px;
 }

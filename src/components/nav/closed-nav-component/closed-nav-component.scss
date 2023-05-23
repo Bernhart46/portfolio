@@ -1,6 +1,6 @@
 @use "../nav-component" as nav;
 
-.closed-nav-component {
+.nav__component--closed {
   @include nav.nav-component(50px);
 
   font-size: 1.5rem;
@@ -11,7 +11,7 @@
   justify-content: center;
   column-gap: 10px;
 
-  &.off {
+  &--off {
     bottom: -50px;
     transition-delay: 0s;
   }

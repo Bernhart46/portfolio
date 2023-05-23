@@ -8,11 +8,11 @@
   left: 0;
   bottom: 0;
   height: $height;
-  width: navbar.$mobile_nav_width;
+  width: navbar.$mobile-nav-width;
 
-  @media (min-width: global.$breakpoint_tablet) {
-    width: navbar.$tablet_nav_width;
-    max-width: navbar.$max_nav_width;
+  @media (min-width: global.$breakpoint-tablet) {
+    width: navbar.$tablet-nav-width;
+    max-width: navbar.$max-nav-width;
     position: static;
     float: left;
   }

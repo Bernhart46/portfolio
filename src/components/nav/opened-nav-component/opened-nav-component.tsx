@@ -29,7 +29,9 @@ interface OpenedNavProps extends NavProps {
 
 export function OpenedNavComponent(props: OpenedNavProps) {
   const { isOn, setIsOn, isMobile } = props;
-  const classes = `opened-nav-component ${!isMobile || isOn ? "" : "off"}`;
+  const classes = `nav__component--opened ${
+    !isMobile || isOn ? "" : "nav__component--opened--off"
+  }`;
 
   const toggleIsOn = () => {
     if (!isMobile) return;
@@ -41,15 +43,15 @@ export function OpenedNavComponent(props: OpenedNavProps) {
       {!isMobile && (
         <>
           <NavProfileComponent />
-          <hr className="nav-line" />
+          <hr className="nav__line" />
         </>
       )}
-      <div className="nav-button-container">
+      <div className="nav__button-container">
         {menuButtons.map((button) => {
           return <NavButtonComponent key={button.title} {...button} />;
         })}
       </div>
-      <hr className="nav-line" />
+      <hr className="nav__line" />
     </div>
   );
 }

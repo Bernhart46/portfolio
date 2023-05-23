@@ -3,16 +3,16 @@ import "./nav-profile-component.scss";
 
 export function NavProfileComponent() {
   return (
-    <div className="nav-profile-component">
-      <div className="picture-container">
+    <div className="nav__profile__component">
+      <div className="nav__profile-picture__container">
         <img
-          className="nav-profile-picture"
+          className="nav__profile-picture"
           src={profilePicture}
           alt="Profile Picture"
         />
       </div>
-      <div className="name-container">
-        <h1 className="nav-profile-name">Hegyi Ferenc</h1>
+      <div className="nav__profile-name__container">
+        <h1 className="nav__profile-name">Hegyi Ferenc</h1>
       </div>
     </div>
   );

@@ -10,8 +10,8 @@ type Props = {
 
 export default function NavButtonComponent({ title, to }: Props) {
   return (
-    <NavLink className="nav-buttons" to={to}>
-      {/* <img className="nav-button-icon" src={chooseMenuIcon(title)} /> */}
+    <NavLink className="nav__button" to={to}>
+      {/* <img className="nav__button-icon" src={chooseMenuIcon(title)} /> */}
       <span>{title}</span>
     </NavLink>
   );

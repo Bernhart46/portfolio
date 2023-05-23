@@ -12,7 +12,9 @@ export function ClosedNavComponent({ isOn, setIsOn }: NavProps) {
 
   return (
     <div
-      className={`closed-nav-component ${isOn ? "off" : ""}`}
+      className={`nav__component--closed ${
+        isOn ? "nav__component--closed--off" : ""
+      }`}
       onClick={() => setIsOn(!isOn)}
     >
       <img src={chooseMenuIcon(title)} />
