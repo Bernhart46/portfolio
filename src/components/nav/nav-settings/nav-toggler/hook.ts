@@ -1,35 +1,34 @@
-import { useContext, useState } from "react";
-import { togglerContext, togglerContextItem } from "./context";
+import { useState } from "react";
+import { useLocalStorage } from "../../../../hooks/useLocalStorage";
+import { NavTogglerProps } from "./nav-toggler-component";
 
-export const useToggler = (id: togglerContextItem["id"]) => {
-  const context = useContext(togglerContext);
-  const [value, setValue] = useState(false);
+type TogglerType = {
+  [id: NavTogglerProps["id"]]: boolean;
+};
 
-  const getItem = () => {
-    const item = context.find((item) => item.id === id);
-    if (!item) return;
+export const useToggler = () => {
+  const { getLocalStorageValue, setLocalStorageValue } = useLocalStorage();
+  const [togglers, setToggler] = useState<TogglerType>(() => {
+    const object = getLocalStorageValue("togglers") as TogglerType;
 
-    setValue((prev) => {
-      return !prev;
+    if (!object) return {} as TogglerType;
+    return object;
+  });
+
+  const getValue = (togglerId: NavTogglerProps["id"]) => {
+    return togglers[togglerId];
+  };
+
+  const toggle = (togglerId: NavTogglerProps["id"]) => {
+    setToggler((prev) => {
+      const updatedTogglers = {
+        ...prev,
+        [togglerId]: prev[togglerId] ? false : true,
+      };
+      setLocalStorageValue("togglers", updatedTogglers);
+      return updatedTogglers;
     });
-
-    return item;
   };
 
-  const toggle = () => {
-    let item = getItem();
-    if (!item) {
-      createToggler();
-      item = getItem();
-      if (!item) return;
-    }
-
-    item.value = !value;
-  };
-
-  const createToggler = () => {
-    context.push({ id, value: false });
-  };
-
-  return { value, toggle };
+  return { getValue, toggle };
 };

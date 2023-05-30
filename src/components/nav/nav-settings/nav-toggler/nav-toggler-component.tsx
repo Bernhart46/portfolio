@@ -1,17 +1,18 @@
-import { useToggler } from "./hook";
 import "./nav-toggler-component.scss";
 
 export type NavTogglerProps = {
-  id: number | string;
+  id: string;
   label: string;
+  toggler: {
+    getValue: (togglerId: string) => boolean;
+    toggle: (togglerId: string) => void;
+  };
 };
 
 export function NavTogglerComponent(props: NavTogglerProps) {
-  const { id, label } = props;
+  const { id, label, toggler } = props;
 
-  const { toggle, value } = useToggler(id);
-
-  const togglerValue = value;
+  const togglerValue = toggler.getValue(id);
 
   const circleClasses = `nav__toggler__circle ${
     togglerValue ? "nav__toggler__circle--right" : "nav__toggler__circle--left"
@@ -20,7 +21,7 @@ export function NavTogglerComponent(props: NavTogglerProps) {
   return (
     <div className="nav__toggler__container">
       <div className="nav__toggler__label">{label}</div>
-      <div className="nav__toggler__box" onClick={toggle}>
+      <div className="nav__toggler__box" onClick={() => toggler.toggle(id)}>
         <div className={circleClasses}></div>
       </div>
     </div>

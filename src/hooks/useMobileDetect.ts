@@ -8,6 +8,7 @@ export const useMobileDetect = () => {
       const condition = window.innerWidth < 768;
       setIsMobile(condition);
     };
+    window.addEventListener("load", setMobileStatus);
     window.addEventListener("resize", setMobileStatus);
 
     return () => window.removeEventListener("resize", setMobileStatus);

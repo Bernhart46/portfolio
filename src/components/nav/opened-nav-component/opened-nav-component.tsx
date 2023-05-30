@@ -40,16 +40,18 @@ export function OpenedNavComponent(props: OpenedNavProps) {
   };
 
   return (
-    <div className={classes} onClick={toggleIsOn}>
+    <div className={classes}>
       {!isMobile && (
         <>
           <NavProfileComponent />
           <hr className="nav__line" />
         </>
       )}
-      {menuButtons.map((button) => {
-        return <NavButtonComponent key={button.title} {...button} />;
-      })}
+      <div onClick={toggleIsOn}>
+        {menuButtons.map((button) => {
+          return <NavButtonComponent key={button.title} {...button} />;
+        })}
+      </div>
       <hr className="nav__line" />
       <NavSettingsComponent />
     </div>
