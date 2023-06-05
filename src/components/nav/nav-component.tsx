@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./nav-component.scss";
-import { useMobileDetect } from "../../hooks/useMobileDetect";
 import { ClosedNavComponent } from "./closed-nav-component/closed-nav-component";
 import { OpenedNavComponent } from "./opened-nav-component/opened-nav-component";
 
@@ -11,21 +10,17 @@ export type NavProps = {
 
 export default function NavComponent() {
   const [isOpenedOnMobile, setIsOpenedOnMobile] = useState(false);
-  const isMobile = useMobileDetect();
 
   return (
     <>
       <OpenedNavComponent
         isOn={isOpenedOnMobile}
-        isMobile={isMobile}
         setIsOn={setIsOpenedOnMobile}
       />
-      {isMobile && (
-        <ClosedNavComponent
-          isOn={isOpenedOnMobile}
-          setIsOn={setIsOpenedOnMobile}
-        />
-      )}
+      <ClosedNavComponent
+        isOn={isOpenedOnMobile}
+        setIsOn={setIsOpenedOnMobile}
+      />
     </>
   );
 }

@@ -16,8 +16,10 @@
   }
 
   &--off {
-    bottom: -100%;
-    transition-delay: 0s;
+    @media (max-width: 768px) {
+      bottom: -100%;
+      transition-delay: 0s;
+    }
   }
 }
 
@@ -25,4 +27,10 @@
   margin: 15px;
   margin-top: 30px;
   margin-bottom: 30px;
+
+  &:first-of-type {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
 }
