@@ -1,8 +1,22 @@
 import { Routes, Route, Navigate } from "react-router-dom";
+import { useEffect } from "react";
 import NavComponent from "./components/nav/nav-component";
 import "./app.scss";
 
+function setRootHeight() {
+  const rootElement = document.querySelector("#root") as HTMLDivElement;
+  rootElement.style.height = `${window.innerHeight}px`;
+}
+
 export default function App() {
+  useEffect(() => {
+    setRootHeight();
+
+    window.addEventListener("resize", setRootHeight);
+
+    return () => window.removeEventListener("resize", setRootHeight);
+  }, []);
+
   return (
     <>
       <NavComponent />
