@@ -39,7 +39,10 @@ export function OpenedNavComponent({ isOn, setIsOn }: NavProps) {
     <section className={classes}>
       <NavProfileComponent />
       <hr className="nav__line" />
-      <div onClick={toggleIsOn}>
+      <div
+        onClick={toggleIsOn}
+        className="nav__component--opened__button-container"
+      >
         {menuButtons.map((button) => {
           return <NavButtonComponent key={button.title} {...button} />;
         })}
