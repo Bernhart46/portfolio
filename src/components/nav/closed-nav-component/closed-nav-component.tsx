@@ -11,7 +11,7 @@ export function ClosedNavComponent({ isOn, setIsOn }: NavProps) {
   const title = (firstLetter + pathname.slice(1)) as menuButtonNames;
 
   return (
-    <div
+    <section
       className={`nav__component--closed ${
         isOn ? "nav__component--closed--off" : ""
       }`}
@@ -19,6 +19,6 @@ export function ClosedNavComponent({ isOn, setIsOn }: NavProps) {
     >
       <img src={chooseMenuIcon(title)} />
       <span>{title}</span>
-    </div>
+    </section>
   );
 }

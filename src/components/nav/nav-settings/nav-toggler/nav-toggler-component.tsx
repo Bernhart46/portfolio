@@ -19,11 +19,11 @@ export function NavTogglerComponent(props: NavTogglerProps) {
   }`;
 
   return (
-    <div className="nav__toggler__container">
+    <section className="nav__toggler__container">
       <div className="nav__toggler__label">{label}</div>
       <div className="nav__toggler__box" onClick={() => toggler.toggle(id)}>
         <div className={circleClasses}></div>
       </div>
-    </div>
+    </section>
   );
 }

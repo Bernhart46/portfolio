@@ -36,7 +36,7 @@ export function OpenedNavComponent({ isOn, setIsOn }: NavProps) {
   };
 
   return (
-    <div className={classes}>
+    <section className={classes}>
       <NavProfileComponent />
       <hr className="nav__line" />
       <div onClick={toggleIsOn}>
@@ -46,6 +46,6 @@ export function OpenedNavComponent({ isOn, setIsOn }: NavProps) {
       </div>
       <hr className="nav__line" />
       <NavSettingsComponent />
-    </div>
+    </section>
   );
 }

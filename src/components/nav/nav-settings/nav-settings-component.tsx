@@ -6,9 +6,9 @@ export function NavSettingsComponent() {
   const toggler = useToggler();
 
   return (
-    <div className="nav__settings__component">
+    <section className="nav__settings__component">
       <NavTogglerComponent id="theme" label="Theme" toggler={toggler} />
       <NavTogglerComponent id="english" label="English" toggler={toggler} />
-    </div>
+    </section>
   );
 }

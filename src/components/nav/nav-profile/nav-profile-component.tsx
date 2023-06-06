@@ -3,7 +3,7 @@ import "./nav-profile-component.scss";
 
 export function NavProfileComponent() {
   return (
-    <div className="nav__profile__component">
+    <section className="nav__profile__component">
       <div className="nav__profile-picture__container">
         <img
           className="nav__profile-picture"
@@ -14,6 +14,6 @@ export function NavProfileComponent() {
       <div className="nav__profile-name__container">
         <h1 className="nav__profile-name">Hegyi Ferenc</h1>
       </div>
-    </div>
+    </section>
   );
 }
