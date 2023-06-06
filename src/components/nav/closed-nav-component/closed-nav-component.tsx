@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { chooseMenuIcon } from "../nav-button/nav-button-component";
+import assets from "../../../assets";
 import { NavProps } from "../nav-component";
 import { menuButtonNames } from "../opened-nav-component/opened-nav-component";
 import "./closed-nav-component.scss";
@@ -17,7 +17,7 @@ export function ClosedNavComponent({ isOn, setIsOn }: NavProps) {
       }`}
       onClick={() => setIsOn(!isOn)}
     >
-      <img src={chooseMenuIcon(title)} />
+      <img src={assets.menuIcons[title]} />
       <span>{title}</span>
     </section>
   );

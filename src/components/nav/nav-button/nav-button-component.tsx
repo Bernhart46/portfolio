@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import "./nav-button-component.scss";
-import { exportObject } from "../../../assets";
 import { menuButtonNames } from "../opened-nav-component/opened-nav-component";
 
 type Props = {
@@ -15,17 +14,4 @@ export default function NavButtonComponent({ title, to }: Props) {
       <span>{title}</span>
     </NavLink>
   );
-}
-
-export function chooseMenuIcon(name: menuButtonNames) {
-  switch (name) {
-    case "Home":
-      return exportObject.homeIcon;
-    case "Projects":
-      return exportObject.projectsIcon;
-    case "Skills":
-      return exportObject.skillsIcon;
-    case "Contacts":
-      return exportObject.contactsIcon;
-  }
 }
