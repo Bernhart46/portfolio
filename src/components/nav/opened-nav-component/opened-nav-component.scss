@@ -1,3 +1,4 @@
+@use "../../../partials/global" as global;
 @use "../nav-component" as nav;
 
 .nav__component--opened {
@@ -16,7 +17,7 @@
   }
 
   &--off {
-    @media (max-width: 768px) {
+    @media (max-width: global.$breakpoint-tablet) {
       bottom: -100%;
       transition-delay: 0s;
     }
@@ -29,7 +30,7 @@
   margin-bottom: 30px;
 
   &:first-of-type {
-    @media (max-width: 768px) {
+    @media (max-width: global.$breakpoint-tablet) {
       display: none;
     }
   }

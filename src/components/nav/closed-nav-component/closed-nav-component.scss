@@ -1,3 +1,4 @@
+@use "../../../partials/global" as global;
 @use "../nav-component" as nav;
 
 .nav__component--closed {
@@ -11,7 +12,7 @@
   justify-content: center;
   column-gap: 10px;
 
-  @media (min-width: 768px) {
+  @media (min-width: global.$breakpoint-tablet) {
     display: none;
   }
 
