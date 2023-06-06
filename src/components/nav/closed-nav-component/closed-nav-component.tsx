@@ -17,7 +17,9 @@ export function ClosedNavComponent({ isOn, setIsOn }: NavProps) {
       }`}
       onClick={() => setIsOn(!isOn)}
     >
-      <img src={assets.menuIcons[title]} />
+      <div className="nav__component__icon-container">
+        {assets.menuIcons[title]()}
+      </div>
       <span>{title}</span>
     </section>
   );

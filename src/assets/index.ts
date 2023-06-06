@@ -1,13 +1,17 @@
-import homeIcon from "./home-icon.svg";
-import projectsIcon from "./projects-icon.svg";
-import skillsIcon from "./skills-icon.svg";
-import contactsIcon from "./contacts-icon.svg";
+import HomeIcon from "./svg/home-icon";
+import ProjectsIcon from "./svg/projects-icon";
+import SkillsIcon from "./svg/skills-icon";
+import ContactsIcon from "./svg/contacts-icon";
 
-const menuIcons = {
-  Home: homeIcon,
-  Projects: projectsIcon,
-  Skills: skillsIcon,
-  Contacts: contactsIcon,
+type menuIconsType = {
+  [key: string]: () => JSX.Element;
+};
+
+const menuIcons: menuIconsType = {
+  Home: HomeIcon,
+  Projects: ProjectsIcon,
+  Skills: SkillsIcon,
+  Contacts: ContactsIcon,
 };
 
 const exportObject = {
