@@ -10,6 +10,9 @@ export function ClosedNavComponent({ isOn, setIsOn }: NavProps) {
   const firstLetter = pathname.charAt(0).toUpperCase();
   const title = (firstLetter + pathname.slice(1)) as menuButtonNames;
 
+  if (!title) return "";
+  const Icon = assets.menuIcons[title];
+
   return (
     <section
       className={`nav__component--closed ${
@@ -18,7 +21,7 @@ export function ClosedNavComponent({ isOn, setIsOn }: NavProps) {
       onClick={() => setIsOn(!isOn)}
     >
       <div className="nav__component__icon-container">
-        {assets.menuIcons[title]()}
+        <Icon />
       </div>
       <span>{title}</span>
     </section>
