@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import "./nav-toggler-component.scss";
-import { togglerContext } from "../../../../app";
+import { togglerContext } from "../../../../shared/contexts";
 
 export type NavTogglerProps = {
   id: string;

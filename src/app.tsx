@@ -3,17 +3,14 @@ import { useEffect } from "react";
 import NavComponent from "./components/nav/nav-component";
 import "./app.scss";
 import { useToggler } from "./components/nav/nav-settings/nav-toggler/hook";
-import { createContext, useState } from "react";
+import { useState } from "react";
+import { togglerContext } from "./shared/contexts";
 
 //This fixes the issues on Mobile, when we are rotating the phone on the side.
 function setRootHeight() {
   const rootElement = document.querySelector("#root") as HTMLDivElement;
   rootElement.style.height = `${window.innerHeight}px`;
 }
-
-export const togglerContext = createContext(
-  {} as ReturnType<typeof useToggler>
-);
 
 export default function App() {
   const togglerObject = useToggler();
