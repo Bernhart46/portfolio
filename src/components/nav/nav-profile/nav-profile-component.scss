@@ -1,8 +1,9 @@
 @use "../../../partials/global" as global;
 
 .nav__profile__component {
-  @media (max-width: global.$breakpoint-tablet) {
-    display: none;
+  display: none;
+  @media (min-width: global.$breakpoint-tablet) {
+    display: block;
   }
 }
 

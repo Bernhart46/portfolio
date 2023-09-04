@@ -34,8 +34,9 @@
   margin-bottom: 30px;
 
   &:first-of-type {
-    @media (max-width: global.$breakpoint-tablet) {
-      display: none;
+    display: none;
+    @media (min-width: global.$breakpoint-tablet) {
+      display: block;
     }
   }
 }
