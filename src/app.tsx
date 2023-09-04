@@ -2,8 +2,13 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { useEffect } from "react";
 import NavComponent from "./components/nav/nav-component";
 import "./app.scss";
-import { togglerContext } from "./shared/contexts";
+import { togglerContext, languageContext } from "./shared/contexts";
 import { useHandleSavingTogglers } from "./hooks/useHandleSavingTogglers";
+
+import english from "./assets/languages/english.json";
+import hungarian from "./assets/languages/hungarian.json";
+
+export type languageContextType = typeof english;
 
 //This fixes the issues on Mobile, when we are rotating the phone on the side.
 function setRootHeight() {
@@ -13,6 +18,7 @@ function setRootHeight() {
 
 export default function App() {
   const togglerObject = useHandleSavingTogglers();
+  const isEnglish = togglerObject.togglers["language_isEnglish"];
 
   useEffect(() => {
     setRootHeight();
@@ -24,15 +30,17 @@ export default function App() {
 
   return (
     <togglerContext.Provider value={togglerObject}>
-      <NavComponent />
-      <Routes>
-        <Route path="/" element={<Navigate to="/home" />} />
-        <Route path="/home" element={<h1>Home</h1>} />
-        <Route path="/projects" element={<h1>Projects</h1>} />
-        <Route path="/skills" element={<h1>Skills</h1>} />
-        <Route path="/contacts" element={<h1>Contacts</h1>} />
-        <Route path="*" element={<Navigate to="/home" />} />
-      </Routes>
+      <languageContext.Provider value={isEnglish ? english : hungarian}>
+        <NavComponent />
+        <Routes>
+          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="/home" element={<h1>Home</h1>} />
+          <Route path="/projects" element={<h1>Projects</h1>} />
+          <Route path="/techs" element={<h1>Techs</h1>} />
+          <Route path="/contacts" element={<h1>Contacts</h1>} />
+          <Route path="*" element={<Navigate to="/home" />} />
+        </Routes>
+      </languageContext.Provider>
     </togglerContext.Provider>
   );
 }

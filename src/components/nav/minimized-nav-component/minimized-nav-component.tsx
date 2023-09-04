@@ -1,19 +1,24 @@
 import { useLocation } from "react-router-dom";
+import { useContext } from "react";
 import assets from "../../../assets";
 import { NavProps } from "../nav-component";
-import { menuButtonNames } from "../opened-nav-component/opened-nav-component";
 import "./minimized-nav-component.scss";
+import { languageContext } from "../../../shared/contexts";
 
 //Minimized Nav Component for Mobile devices.
 export function MinimizedNavComponent({ isOn, setIsOn }: NavProps) {
-  const pathname = useLocation().pathname.substring(1);
-  const firstLetter = pathname.charAt(0).toUpperCase();
-  const title = (firstLetter + pathname.slice(1)) as menuButtonNames;
+  const { buttons } = useContext(languageContext).nav;
+  const pathname = useLocation().pathname.substring(1) as
+    | "home"
+    | "projects"
+    | "techs"
+    | "contacts";
 
-  //Check if the title exists.
-  if (!assets.menuIcons[title]) return <div></div>;
+  const title = buttons[pathname];
+  //Checks if the pathname is correct.
+  if (!assets.menuIcons[pathname]) return <div></div>;
 
-  const Icon = assets.menuIcons[title];
+  const Icon = assets.menuIcons[pathname];
 
   return (
     <section

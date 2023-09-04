@@ -1,0 +1,18 @@
+{
+  "nav": {
+    "profile": {
+      "name": "Ferenc Hegyi",
+      "alt": "Profile Picture"
+    },
+    "buttons": {
+      "home": "Home",
+      "projects": "Projects",
+      "techs": "Technologies",
+      "contacts": "Contacts"
+    },
+    "settings": {
+      "theme": "Theme",
+      "english": "English"
+    }
+  }
+}

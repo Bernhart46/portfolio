@@ -1,0 +1,18 @@
+{
+  "nav": {
+    "profile": {
+      "name": "Hegyi Ferenc",
+      "alt": "Profilkép"
+    },
+    "buttons": {
+      "home": "Kezdőlap",
+      "projects": "Projektek",
+      "techs": "Technológiák",
+      "contacts": "Kapcsolat"
+    },
+    "settings": {
+      "theme": "Téma",
+      "english": "English"
+    }
+  }
+}

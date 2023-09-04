@@ -1,9 +1,8 @@
 import { NavLink } from "react-router-dom";
 import "./nav-button-component.scss";
-import { menuButtonNames } from "../opened-nav-component/opened-nav-component";
 
 type Props = {
-  title: menuButtonNames;
+  title: string;
   to: string;
 };
 

@@ -1,6 +1,6 @@
 import HomeIcon from "./svg/home-icon";
 import ProjectsIcon from "./svg/projects-icon";
-import SkillsIcon from "./svg/skills-icon";
+import TechsIcon from "./svg/techs-icon";
 import ContactsIcon from "./svg/contacts-icon";
 
 type menuIconsType = {
@@ -8,10 +8,10 @@ type menuIconsType = {
 };
 
 const menuIcons: menuIconsType = {
-  Home: HomeIcon,
-  Projects: ProjectsIcon,
-  Skills: SkillsIcon,
-  Contacts: ContactsIcon,
+  home: HomeIcon,
+  projects: ProjectsIcon,
+  techs: TechsIcon,
+  contacts: ContactsIcon,
 };
 
 const exportObject = {

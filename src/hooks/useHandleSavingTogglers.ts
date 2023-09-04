@@ -19,13 +19,16 @@ export function useHandleSavingTogglers() {
 
   //Loads the toggler values in.
   useEffect(() => {
-    const setTheme = () => {
-      const themeFromLocalStorage = localStorage.getItem("theme_isDark");
-      const theme = themeFromLocalStorage && JSON.parse(themeFromLocalStorage);
-      setValue("theme_isDark", theme);
-    };
+    //Setting the Theme
+    const themeFromLocalStorage = localStorage.getItem("theme_isDark");
+    const theme = themeFromLocalStorage && JSON.parse(themeFromLocalStorage);
+    setValue("theme_isDark", theme);
 
-    setTheme();
+    //Setting the Language
+    const languageFromLocalStorage = localStorage.getItem("language_isEnglish");
+    const language =
+      languageFromLocalStorage && JSON.parse(languageFromLocalStorage);
+    setValue("language_isEnglish", language);
   }, []);
 
   //Checks Toggler changes (theme, language)
@@ -43,6 +46,10 @@ export function useHandleSavingTogglers() {
 
   useEffect(() => {
     if (togglers.language_isEnglish !== undefined) {
+      localStorage.setItem(
+        "language_isEnglish",
+        JSON.stringify(togglers.language_isEnglish)
+      );
     }
   }, [togglers.language_isEnglish]);
 
