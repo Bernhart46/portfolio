@@ -10,7 +10,9 @@ export function ClosedNavComponent({ isOn, setIsOn }: NavProps) {
   const firstLetter = pathname.charAt(0).toUpperCase();
   const title = (firstLetter + pathname.slice(1)) as menuButtonNames;
 
-  if (!title) return "";
+  //Check if the title exists.
+  if (!assets.menuIcons[title]) return <div></div>;
+
   const Icon = assets.menuIcons[title];
 
   return (
