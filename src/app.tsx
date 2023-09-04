@@ -2,9 +2,8 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { useEffect } from "react";
 import NavComponent from "./components/nav/nav-component";
 import "./app.scss";
-import { useToggler } from "./components/nav/nav-settings/nav-toggler/hook";
-import { useState } from "react";
 import { togglerContext } from "./shared/contexts";
+import { useHandleSavingTogglers } from "./hooks/useHandleSavingTogglers";
 
 //This fixes the issues on Mobile, when we are rotating the phone on the side.
 function setRootHeight() {
@@ -13,21 +12,7 @@ function setRootHeight() {
 }
 
 export default function App() {
-  const togglerObject = useToggler();
-  const { setValue, togglers } = togglerObject;
-  const [prevTogglers, setPrevTogglers] = useState(togglers);
-
-  const changeTheme = (noThemeSaved?: true) => {
-    if (noThemeSaved) {
-      document.body.style.setProperty("--theme-mode", "light");
-      return;
-    }
-
-    document.body.style.setProperty(
-      "--theme-mode",
-      togglers.theme_isDark ? "dark" : "light"
-    );
-  };
+  const togglerObject = useHandleSavingTogglers();
 
   useEffect(() => {
     setRootHeight();
@@ -36,39 +21,6 @@ export default function App() {
 
     return () => window.removeEventListener("resize", setRootHeight);
   }, []);
-
-  //Handles localStorage
-  useEffect(() => {
-    const setTheme = () => {
-      const themeFromLocalStorage = localStorage.getItem("theme_isDark");
-      const theme = themeFromLocalStorage && JSON.parse(themeFromLocalStorage);
-      setValue("theme_isDark", theme);
-    };
-
-    setTheme();
-  }, []);
-
-  //Checks Toggler changes (theme, language)
-  useEffect(() => {
-    //If the theme changed
-    if (togglers.theme_isDark !== undefined) {
-      if (togglers.theme_isDark !== prevTogglers.theme_isDark) {
-        changeTheme();
-        localStorage.setItem(
-          "theme_isDark",
-          JSON.stringify(togglers.theme_isDark)
-        );
-      }
-    } else {
-      changeTheme(true);
-    }
-
-    //If the language changed
-    if (togglers.language_isEnglish !== undefined) {
-    }
-
-    setPrevTogglers(togglers);
-  }, [togglers]);
 
   return (
     <togglerContext.Provider value={togglerObject}>
