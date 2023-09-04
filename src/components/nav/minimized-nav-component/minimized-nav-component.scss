@@ -1,7 +1,7 @@
 @use "../../../partials/global" as global;
 @use "../nav-component" as nav;
 
-.nav__component--closed {
+.nav__component--minimized {
   @include nav.nav-component(50px);
 
   font-size: 1.5rem;
