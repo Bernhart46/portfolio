@@ -1,13 +1,14 @@
-import { useState } from "react";
-import { useLocalStorage } from "../../../../hooks/useLocalStorage";
+import { useState, useContext } from "react";
+import { LocalStorageContext } from "../../../../hooks/useLocalStorage";
 import { NavTogglerProps } from "./nav-toggler-component";
 
-type TogglerType = {
+export type TogglerType = {
   [id: NavTogglerProps["id"]]: boolean;
 };
 
 export const useToggler = () => {
-  const { getLocalStorageValue, setLocalStorageValue } = useLocalStorage();
+  const { getLocalStorageValue, setLocalStorageValue } =
+    useContext(LocalStorageContext);
   const [togglers, setToggler] = useState<TogglerType>(() => {
     const object = getLocalStorageValue("togglers") as TogglerType;
 

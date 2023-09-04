@@ -1,10 +1,17 @@
-import { useState } from "react";
+import { useState, createContext } from "react";
 
-type LocalStorageType<T> = { [key: string]: T };
+type LocalStorageType = { [key: string]: any };
 
-export const useLocalStorage = <T>() => {
-  const [storage, setStorage] = useState<LocalStorageType<T>>(() => {
-    const storedData: LocalStorageType<T> = {};
+type contextType = {
+  getLocalStorageValue: (key: string) => any | null;
+  setLocalStorageValue: (key: string, value: any) => void;
+};
+export const LocalStorageContext = createContext({} as contextType);
+export const LocalStorageProvider = LocalStorageContext.Provider;
+
+export const useLocalStorage = () => {
+  const [storage, setStorage] = useState<LocalStorageType>(() => {
+    const storedData: LocalStorageType = {};
 
     for (let i = 0; i < window.localStorage.length; i++) {
       const key = window.localStorage.key(i);
@@ -18,7 +25,7 @@ export const useLocalStorage = <T>() => {
     return storedData;
   });
 
-  const setLocalStorageValue = (key: string, value: T) => {
+  const setLocalStorageValue = (key: string, value: any) => {
     if (!key) return;
 
     localStorage.setItem(key, JSON.stringify(value));
@@ -36,5 +43,8 @@ export const useLocalStorage = <T>() => {
     }
   };
 
-  return { getLocalStorageValue, setLocalStorageValue };
+  return {
+    getLocalStorageValue,
+    setLocalStorageValue,
+  };
 };

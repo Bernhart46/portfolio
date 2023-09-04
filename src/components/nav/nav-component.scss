@@ -1,9 +1,11 @@
 @use "../../partials/global" as global;
 @use "../../partials/navbar" as navbar;
+@use "../../app.scss" as app;
 
 @mixin nav-component($height) {
-  background-color: map-get(global.$light-theme, primary-lighter);
-  color: map-get(global.$light-theme, font-on-dark);
+  // background-color: map-get(global.$light-theme, primary-lighter);
+  background-color: var(--primary-lighter);
+  color: var(--font-on-dark);
   position: absolute;
   left: 0;
   bottom: 0;
