@@ -14,5 +14,13 @@
       "theme": "Theme",
       "english": "English"
     }
+  },
+  "home_page": {
+    "primary_title": "My name is Ferenc Hegyi",
+    "secondary_title": "Welcome to my portfolio site."
+  },
+  "projects_page": {
+    "primary_title": "Projects",
+    "secondary_title": "Check out my Projects listed below."
   }
 }

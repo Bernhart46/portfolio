@@ -7,6 +7,8 @@ import { useHandleSavingTogglers } from "./hooks/useHandleSavingTogglers";
 
 import english from "./assets/languages/english.json";
 import hungarian from "./assets/languages/hungarian.json";
+import { HomePageComponent } from "./pages/home-page";
+import { ProjectsPageComponent } from "./pages/projects-page";
 
 export type languageContextType = typeof english;
 
@@ -36,8 +38,8 @@ export default function App() {
         <NavComponent />
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
-          <Route path="/home" element={<h1>Home</h1>} />
-          <Route path="/projects" element={<h1>Projects</h1>} />
+          <Route path="/home" element={<HomePageComponent />} />
+          <Route path="/projects" element={<ProjectsPageComponent />} />
           <Route path="/techs" element={<h1>Techs</h1>} />
           <Route path="/contacts" element={<h1>Contacts</h1>} />
           <Route path="*" element={<Navigate to="/home" />} />

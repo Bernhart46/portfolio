@@ -14,5 +14,13 @@
       "theme": "Téma",
       "english": "English"
     }
+  },
+  "home_page": {
+    "primary_title": "A nevem Hegyi Ferenc",
+    "secondary_title": "Üdvözöllek a portfólió oldalamon."
+  },
+  "projects_page": {
+    "primary_title": "Projektek",
+    "secondary_title": "Nézd meg az alább felsorolt projekteimet."
   }
 }
