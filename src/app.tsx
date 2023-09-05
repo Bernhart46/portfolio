@@ -19,6 +19,8 @@ function setRootHeight() {
 export default function App() {
   const togglerObject = useHandleSavingTogglers();
   const isEnglish = togglerObject.togglers["language_isEnglish"];
+  const language = isEnglish ? english : hungarian;
+  document.title = language.nav.profile.name;
 
   useEffect(() => {
     setRootHeight();
@@ -30,7 +32,7 @@ export default function App() {
 
   return (
     <togglerContext.Provider value={togglerObject}>
-      <languageContext.Provider value={isEnglish ? english : hungarian}>
+      <languageContext.Provider value={language}>
         <NavComponent />
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
