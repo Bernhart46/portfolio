@@ -1,7 +1,7 @@
 @use "../../../partials/global" as global;
 @use "../nav-component" as nav;
 
-.nav__component--opened {
+.nav__component--maximized {
   @include nav.nav-component(100%);
 
   display: flex;
@@ -23,7 +23,7 @@
     }
   }
 
-  .nav__component--opened__button-container {
+  .nav__component--maximized__button-container {
     position: relative;
   }
 }

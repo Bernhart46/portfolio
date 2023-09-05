@@ -3,15 +3,15 @@ import NavButtonComponent from "../nav-button/nav-button-component";
 import { NavProps } from "../nav-component";
 import { NavProfileComponent } from "../nav-profile/nav-profile-component";
 import { NavSettingsComponent } from "../nav-settings/nav-settings-component";
-import "./opened-nav-component.scss";
+import "./maximized-nav-component.scss";
 import { languageContext } from "../../../shared/contexts";
 
-export function OpenedNavComponent({ isOn, setIsOn }: NavProps) {
+export function MaximizedNavComponent({ isOn, setIsOn }: NavProps) {
   const { home, projects, techs, contacts } =
     useContext(languageContext).nav.buttons;
 
-  const classes = `nav__component--opened ${
-    isOn ? "" : "nav__component--opened--off"
+  const classes = `nav__component--maximized ${
+    isOn ? "" : "nav__component--maximized--off"
   }`;
 
   const menuButtons: { title: string; to: string }[] = [
@@ -45,7 +45,7 @@ export function OpenedNavComponent({ isOn, setIsOn }: NavProps) {
       <hr className="nav__line" />
       <div
         onClick={toggleIsOn}
-        className="nav__component--opened__button-container"
+        className="nav__component--maximized__button-container"
       >
         {menuButtons.map((button) => {
           return <NavButtonComponent key={button.title} {...button} />;

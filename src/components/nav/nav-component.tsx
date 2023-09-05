@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./nav-component.scss";
 import { MinimizedNavComponent } from "./minimized-nav-component/minimized-nav-component";
-import { OpenedNavComponent } from "./opened-nav-component/opened-nav-component";
+import { MaximizedNavComponent } from "./maximized-nav-component/maximized-nav-component";
 
 export type NavProps = {
   isOn: boolean;
@@ -13,7 +13,7 @@ export default function NavComponent() {
 
   return (
     <>
-      <OpenedNavComponent
+      <MaximizedNavComponent
         isOn={isOpenedOnMobile}
         setIsOn={setIsOpenedOnMobile}
       />
