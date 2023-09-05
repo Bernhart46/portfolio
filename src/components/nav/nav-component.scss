@@ -1,6 +1,6 @@
 @use "../../partials/global" as global;
 @use "../../partials/navbar" as navbar;
-@use "../../app.scss" as app;
+@use "../../app.scss";
 
 @mixin nav-component($height) {
   background-color: var(--primary-lighter);
