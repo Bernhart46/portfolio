@@ -30,7 +30,7 @@ export function MinimizedNavComponent({ isOn, setIsOn }: NavProps) {
       <div className="nav__component__icon-container">
         <Icon />
       </div>
-      <span>{title}</span>
+      <span className="nav__component__title">{title}</span>
     </section>
   );
 }
