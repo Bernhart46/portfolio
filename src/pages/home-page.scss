@@ -1,7 +1,8 @@
 @use "../app.scss";
+@use "../partials/global" as global;
 
 .home-page-component {
-  transition: 0.2s;
+  transition: global.$global-transition;
   height: 100%;
   background-color: var(--background);
   color: var(--primary-font-color);
