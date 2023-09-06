@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { languageContext } from "../shared/contexts";
+import "./projects-page.scss";
 
 export function ProjectsPageComponent() {
   const { primary_title, secondary_title } =
