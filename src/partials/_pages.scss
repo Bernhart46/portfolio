@@ -1,0 +1,9 @@
+@use "./global" as global;
+@use "../app.scss";
+
+@mixin default-page-styles {
+  transition: global.$global-transition;
+  height: 100%;
+  background-color: var(--background);
+  color: var(--primary-font-color);
+}

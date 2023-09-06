@@ -1,9 +1,5 @@
-@use "../app.scss";
-@use "../partials/global" as global;
+@use "../partials/pages" as pages;
 
 .home-page-component {
-  transition: global.$global-transition;
-  height: 100%;
-  background-color: var(--background);
-  color: var(--primary-font-color);
+  @include pages.default-page-styles;
 }
