@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavTogglerProps, TogglerType } from "../../nav-types";
+import { NavTogglerProps, TogglerType } from "../components/nav/nav-types";
 
 export const useToggler = () => {
   const [togglers, setToggler] = useState<TogglerType>({} as TogglerType);

@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { useToggler } from "../components/nav/nav-settings/nav-toggler/hook";
+import { useToggler } from "../hooks/useToggler";
 import english from "../assets/languages/english.json";
 
 export type languageContextType = typeof english | null;
