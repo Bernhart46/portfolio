@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useContext } from "react";
 import assets from "../../../assets";
-import { NavProps } from "../nav-component";
+import { NavProps } from "../nav-types";
 import "./minimized-nav-component.scss";
 import { languageContext } from "../../../shared/contexts";
 

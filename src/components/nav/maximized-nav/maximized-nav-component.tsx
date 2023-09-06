@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import NavButtonComponent from "../nav-button/nav-button-component";
-import { NavProps } from "../nav-component";
+import { NavProps } from "../nav-types";
 import { NavProfileComponent } from "../nav-profile/nav-profile-component";
 import { NavSettingsComponent } from "../nav-settings/nav-settings-component";
 import "./maximized-nav-component.scss";
 import { languageContext } from "../../../shared/contexts";
+import { menuButtons } from "../nav-types";
 
 export function MaximizedNavComponent({ isOn, setIsOn }: NavProps) {
   const { home, projects, techs, contacts } =
@@ -14,7 +15,7 @@ export function MaximizedNavComponent({ isOn, setIsOn }: NavProps) {
     isOn ? "" : "nav__component--maximized--off"
   }`;
 
-  const menuButtons: { title: string | undefined; to: string }[] = [
+  const menuButtons: menuButtons[] = [
     {
       title: home,
       to: "/home",

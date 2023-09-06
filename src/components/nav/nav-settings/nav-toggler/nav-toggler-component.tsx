@@ -1,11 +1,7 @@
 import { useContext } from "react";
 import "./nav-toggler-component.scss";
 import { togglerContext } from "../../../../shared/contexts";
-
-export type NavTogglerProps = {
-  id: string;
-  label: string | undefined;
-};
+import { NavTogglerProps } from "../../nav-types";
 
 export function NavTogglerComponent(props: NavTogglerProps) {
   const { id, label } = props;
