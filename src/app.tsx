@@ -10,6 +10,7 @@ import hungarian from "./assets/languages/hungarian.json";
 import { HomePageComponent } from "./pages/home-page";
 import { ProjectsPageComponent } from "./pages/projects-page";
 import { LoadingScreenComponent } from "./components/loading-screen/loading-screen-component";
+import { TechsPageComponent } from "./pages/techs-page";
 
 export type languageContextType = typeof english | null;
 
@@ -43,7 +44,7 @@ export default function App() {
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<HomePageComponent />} />
           <Route path="/projects" element={<ProjectsPageComponent />} />
-          <Route path="/techs" element={<h1>Techs</h1>} />
+          <Route path="/techs" element={<TechsPageComponent />} />
           <Route path="/contacts" element={<h1>Contacts</h1>} />
           <Route path="*" element={<Navigate to="/home" />} />
         </Routes>
