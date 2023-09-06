@@ -1,7 +1,9 @@
 @use "../../../partials/global" as global;
 @use "../nav-component" as nav;
+@use "sass:math";
 
 $icon_size: 32px;
+$fix_icon_position: translateX(math.div(-$icon_size, 4));
 
 .nav__component--minimized {
   @include nav.nav-component(50px);
@@ -27,9 +29,9 @@ $icon_size: 32px;
 .nav__component__icon-container {
   width: $icon_size;
   height: $icon_size;
-  transform: translateX(-$icon_size / 4);
+  transform: $fix_icon_position;
 }
 
 .nav__component__title {
-  transform: translateX(-$icon_size / 4);
+  transform: $fix_icon_position;
 }
