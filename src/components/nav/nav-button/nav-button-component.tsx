@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import "./nav-button-component.scss";
 
 type Props = {
-  title: string;
+  title: string | undefined;
   to: string;
 };
 

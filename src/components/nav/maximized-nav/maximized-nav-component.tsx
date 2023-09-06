@@ -7,18 +7,14 @@ import "./maximized-nav-component.scss";
 import { languageContext } from "../../../shared/contexts";
 
 export function MaximizedNavComponent({ isOn, setIsOn }: NavProps) {
-  const {
-    home = "...",
-    projects = "...",
-    techs = "...",
-    contacts = "...",
-  } = useContext(languageContext)?.nav.buttons || {};
+  const { home, projects, techs, contacts } =
+    useContext(languageContext)?.nav.buttons || {};
 
   const classes = `nav__component--maximized ${
     isOn ? "" : "nav__component--maximized--off"
   }`;
 
-  const menuButtons: { title: string; to: string }[] = [
+  const menuButtons: { title: string | undefined; to: string }[] = [
     {
       title: home,
       to: "/home",

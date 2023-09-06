@@ -14,7 +14,7 @@ export function MinimizedNavComponent({ isOn, setIsOn }: NavProps) {
     | "techs"
     | "contacts";
 
-  const title = buttons ? buttons[pathname] : "...";
+  const title = buttons && buttons[pathname];
 
   //Checks if the pathname is correct.
   if (!assets.menuIcons[pathname]) return <div></div>;

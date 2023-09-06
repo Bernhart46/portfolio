@@ -8,8 +8,8 @@ export function NavSettingsComponent() {
 
   return (
     <section className="nav__settings__component">
-      <NavTogglerComponent id="theme_isDark" label={theme || "..."} />
-      <NavTogglerComponent id="language_isEnglish" label={english || "..."} />
+      <NavTogglerComponent id="theme_isDark" label={theme} />
+      <NavTogglerComponent id="language_isEnglish" label={english} />
     </section>
   );
 }

@@ -4,7 +4,7 @@ import { togglerContext } from "../../../../shared/contexts";
 
 export type NavTogglerProps = {
   id: string;
-  label: string;
+  label: string | undefined;
 };
 
 export function NavTogglerComponent(props: NavTogglerProps) {

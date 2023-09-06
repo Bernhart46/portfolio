@@ -23,7 +23,7 @@ export function NavProfileComponent() {
         />
       </div>
       <div className="nav__profile-name__container">
-        <h1 className="nav__profile-name">{profile?.name || "..."}</h1>
+        <h1 className="nav__profile-name">{profile?.name}</h1>
       </div>
     </section>
   );
