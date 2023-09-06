@@ -7,14 +7,15 @@ import { languageContext } from "../../../shared/contexts";
 
 //Minimized Nav Component for Mobile devices.
 export function MinimizedNavComponent({ isOn, setIsOn }: NavProps) {
-  const { buttons } = useContext(languageContext).nav;
+  const { buttons } = useContext(languageContext)?.nav || {};
   const pathname = useLocation().pathname.substring(1) as
     | "home"
     | "projects"
     | "techs"
     | "contacts";
 
-  const title = buttons[pathname];
+  const title = buttons ? buttons[pathname] : "...";
+
   //Checks if the pathname is correct.
   if (!assets.menuIcons[pathname]) return <div></div>;
 

@@ -10,7 +10,7 @@ import hungarian from "./assets/languages/hungarian.json";
 import { HomePageComponent } from "./pages/home-page";
 import { ProjectsPageComponent } from "./pages/projects-page";
 
-export type languageContextType = typeof english;
+export type languageContextType = typeof english | null;
 
 //This fixes the issues on Mobile, when we are rotating the phone on the side.
 function setRootHeight() {
@@ -20,9 +20,12 @@ function setRootHeight() {
 
 export default function App() {
   const togglerObject = useHandleSavingTogglers();
+  //checks the languageData in the togglerOjbect (undefined, true, false)
   const isEnglish = togglerObject.togglers["language_isEnglish"];
-  const language = isEnglish ? english : hungarian;
-  document.title = language.nav.profile.name;
+  const language =
+    isEnglish === undefined ? null : isEnglish ? english : hungarian;
+
+  document.title = language?.nav.profile.name || "Portfolio";
 
   useEffect(() => {
     setRootHeight();

@@ -7,8 +7,12 @@ import "./maximized-nav-component.scss";
 import { languageContext } from "../../../shared/contexts";
 
 export function MaximizedNavComponent({ isOn, setIsOn }: NavProps) {
-  const { home, projects, techs, contacts } =
-    useContext(languageContext).nav.buttons;
+  const {
+    home = "...",
+    projects = "...",
+    techs = "...",
+    contacts = "...",
+  } = useContext(languageContext)?.nav.buttons || {};
 
   const classes = `nav__component--maximized ${
     isOn ? "" : "nav__component--maximized--off"
@@ -47,8 +51,8 @@ export function MaximizedNavComponent({ isOn, setIsOn }: NavProps) {
         onClick={toggleIsOn}
         className="nav__component--maximized__button-container"
       >
-        {menuButtons.map((button) => {
-          return <NavButtonComponent key={button.title} {...button} />;
+        {menuButtons.map((button, index) => {
+          return <NavButtonComponent key={index} {...button} />;
         })}
       </div>
       <hr className="nav__line" />

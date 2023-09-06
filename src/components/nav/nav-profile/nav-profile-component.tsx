@@ -5,7 +5,7 @@ import { languageContext } from "../../../shared/contexts";
 
 export function NavProfileComponent() {
   const [isLoading, setIsLoading] = useState(true);
-  const { profile } = useContext(languageContext).nav;
+  const { profile } = useContext(languageContext)?.nav || {};
 
   const handleOnLoad = () => {
     setIsLoading(false);
@@ -17,13 +17,13 @@ export function NavProfileComponent() {
         <img
           className="nav__profile-picture"
           src={profilePicture}
-          alt={profile.alt}
+          alt={profile?.alt}
           onLoad={handleOnLoad}
           style={{ opacity: isLoading ? "0" : "1" }}
         />
       </div>
       <div className="nav__profile-name__container">
-        <h1 className="nav__profile-name">{profile.name}</h1>
+        <h1 className="nav__profile-name">{profile?.name || "..."}</h1>
       </div>
     </section>
   );

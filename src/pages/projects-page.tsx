@@ -3,7 +3,8 @@ import { languageContext } from "../shared/contexts";
 
 export function ProjectsPageComponent() {
   const { primary_title, secondary_title } =
-    useContext(languageContext).projects_page;
+    useContext(languageContext)?.projects_page || {};
+
   return (
     <section className="projects-page-component">
       <h1>{primary_title}</h1>
