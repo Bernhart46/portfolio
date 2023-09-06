@@ -5,7 +5,6 @@ import "./loading-screen-component.scss";
 export function LoadingScreenComponent() {
   const [isLoading, setIsLoading] = useState(true);
   const loadingRingRef = useRef(null);
-  const [isBigForShowText, setIsBigForShowText] = useState(false);
 
   const LOADING_TIME_SECONDS = 3;
 
@@ -18,28 +17,6 @@ export function LoadingScreenComponent() {
     return () => clearTimeout(loadingTimeout);
   }, []);
 
-  useEffect(() => {
-    const resizeWhileLoading = () => {
-      if (loadingRingRef.current) {
-        const loadingRingDiv = loadingRingRef.current as HTMLDivElement;
-
-        const isBig = loadingRingDiv.offsetWidth > 150;
-
-        if (isBig !== isBigForShowText) {
-          setIsBigForShowText(isBig);
-        }
-      }
-    };
-
-    resizeWhileLoading();
-
-    window.addEventListener("resize", resizeWhileLoading);
-
-    return () => {
-      window.removeEventListener("resize", resizeWhileLoading);
-    };
-  }, [isBigForShowText]);
-
   return createPortal(
     isLoading && (
       <section className="loading-screen-component">
@@ -47,7 +24,6 @@ export function LoadingScreenComponent() {
           <div className="outer-ring">
             <div className="inner-ring"></div>
           </div>
-          {isBigForShowText && <span>Loading...</span>}
         </div>
       </section>
     ),
