@@ -26,7 +26,7 @@ export default function App() {
   const language =
     isEnglish === undefined ? null : isEnglish ? english : hungarian;
 
-  document.title = language?.nav.profile.name || "Portfolio";
+  document.title = language?.nav.profile.name || "Loading...";
 
   useEffect(() => {
     setRootHeight();
