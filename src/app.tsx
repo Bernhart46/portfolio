@@ -1,5 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import NavComponent from "./components/nav/nav-component";
 import "./app.scss";
 import { togglerContext, languageContext } from "./shared/contexts";
@@ -19,6 +20,7 @@ function setRootHeight() {
 }
 
 export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
   const togglerObject = useHandleSavingTogglers();
   //checks the languageData in the togglerOjbect (undefined, true, false)
   const isEnglish = togglerObject.togglers["language_isEnglish"];
@@ -29,10 +31,14 @@ export default function App() {
 
   useEffect(() => {
     setRootHeight();
-
     window.addEventListener("resize", setRootHeight);
 
-    return () => window.removeEventListener("resize", setRootHeight);
+    const loadingTimeout = setTimeout(() => setIsLoading(false), 2000);
+
+    return () => {
+      window.removeEventListener("resize", setRootHeight);
+      clearTimeout(loadingTimeout);
+    };
   }, []);
 
   return (
@@ -47,6 +53,22 @@ export default function App() {
           <Route path="/contacts" element={<h1>Contacts</h1>} />
           <Route path="*" element={<Navigate to="/home" />} />
         </Routes>
+        {createPortal(
+          isLoading && (
+            <div
+              style={{
+                position: "absolute",
+                background: "blue",
+                height: "100vh",
+                width: "100vw",
+                top: "0",
+              }}
+            >
+              LOADING
+            </div>
+          ),
+          document.getElementById("loading-screen") as HTMLElement
+        )}
       </languageContext.Provider>
     </togglerContext.Provider>
   );
