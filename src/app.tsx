@@ -3,9 +3,11 @@ import "./app.scss";
 import { togglerContext, languageContext } from "./shared/contexts";
 import { LoadingScreenComponent } from "./components/loading-screen/loading-screen-component";
 import { RoutesComponent } from "./components/routes/routes-component";
-import { useFixAppHeight } from "./hooks/useFixAppHeight";
-import { useGetLanguage } from "./hooks/useGetLanguage";
-import { useHandleSavingTogglers } from "./hooks/useHandleSavingTogglers";
+import {
+  useFixAppHeight,
+  useGetLanguage,
+  useHandleSavingTogglers,
+} from "./hooks";
 
 export default function App() {
   useFixAppHeight();
