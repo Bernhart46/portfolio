@@ -1,6 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { createPortal } from "react-dom";
+import { useEffect } from "react";
 import NavComponent from "./components/nav/nav-component";
 import "./app.scss";
 import { togglerContext, languageContext } from "./shared/contexts";
@@ -10,6 +9,7 @@ import english from "./assets/languages/english.json";
 import hungarian from "./assets/languages/hungarian.json";
 import { HomePageComponent } from "./pages/home-page";
 import { ProjectsPageComponent } from "./pages/projects-page";
+import { LoadingScreenComponent } from "./components/loading-screen/loading-screen-component";
 
 export type languageContextType = typeof english | null;
 
@@ -20,7 +20,6 @@ function setRootHeight() {
 }
 
 export default function App() {
-  const [isLoading, setIsLoading] = useState(true);
   const togglerObject = useHandleSavingTogglers();
   //checks the languageData in the togglerOjbect (undefined, true, false)
   const isEnglish = togglerObject.togglers["language_isEnglish"];
@@ -33,12 +32,7 @@ export default function App() {
     setRootHeight();
     window.addEventListener("resize", setRootHeight);
 
-    const loadingTimeout = setTimeout(() => setIsLoading(false), 2000);
-
-    return () => {
-      window.removeEventListener("resize", setRootHeight);
-      clearTimeout(loadingTimeout);
-    };
+    return () => window.removeEventListener("resize", setRootHeight);
   }, []);
 
   return (
@@ -53,22 +47,7 @@ export default function App() {
           <Route path="/contacts" element={<h1>Contacts</h1>} />
           <Route path="*" element={<Navigate to="/home" />} />
         </Routes>
-        {createPortal(
-          isLoading && (
-            <div
-              style={{
-                position: "absolute",
-                background: "blue",
-                height: "100vh",
-                width: "100vw",
-                top: "0",
-              }}
-            >
-              LOADING
-            </div>
-          ),
-          document.getElementById("loading-screen") as HTMLElement
-        )}
+        <LoadingScreenComponent />
       </languageContext.Provider>
     </togglerContext.Provider>
   );
