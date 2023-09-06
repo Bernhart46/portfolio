@@ -19,7 +19,7 @@ $size: 90%;
   animation-delay: 2s;
 }
 
-.loading-ring {
+.loading-ring-container {
   @include global.flex-center;
   height: 25%;
   aspect-ratio: 1;
