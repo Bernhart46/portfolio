@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useToggler } from "../components/nav/nav-settings/nav-toggler/hook";
 
-export function useHandleSavingTogglers() {
+export default function useHandleSavingTogglers() {
   const togglerObject = useToggler();
   const { setValue, togglers } = togglerObject;
 

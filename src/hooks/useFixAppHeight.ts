@@ -6,7 +6,7 @@ function setRootHeight() {
   rootElement.style.height = `${window.innerHeight}px`;
 }
 
-export function useFixAppHeight() {
+export default function useFixAppHeight() {
   useEffect(() => {
     setRootHeight();
     window.addEventListener("resize", setRootHeight);
