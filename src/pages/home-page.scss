@@ -41,20 +41,26 @@
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 1.25rem;
   margin-bottom: 1rem;
   transition: font-size 0.2s ease;
 
+  @media (min-width: global.$breakpoint-mobile) {
+    font-size: 2rem;
+  }
   @media (min-width: global.$breakpoint-desktop) {
     font-size: 3rem;
   }
 }
 
 h3 {
-  font-size: 1rem;
+  font-size: 0.75rem;
   font-weight: normal;
   transition: font-size 0.2s ease;
 
+  @media (min-width: global.$breakpoint-mobile) {
+    font-size: 1rem;
+  }
   @media (min-width: global.$breakpoint-desktop) {
     font-size: 1.5rem;
   }
