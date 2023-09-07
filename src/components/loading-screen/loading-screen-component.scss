@@ -17,6 +17,7 @@ $size: 90%;
   opacity: 1;
   animation: fade-away-animation 1.1s linear;
   animation-delay: 2s;
+  z-index: 99999;
 }
 
 .loading-ring-container {
