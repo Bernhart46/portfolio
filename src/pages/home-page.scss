@@ -1,5 +1,61 @@
 @use "../partials/pages" as pages;
+@use "../partials/global" as global;
+
+@mixin title-size-position {
+  position: absolute;
+
+  width: 100%;
+  max-height: 600px;
+  aspect-ratio: 16 / 10;
+
+  @media (min-width: 1260px) {
+    height: 100%;
+    background-size: cover;
+  }
+}
 
 .home-page-component {
   @include pages.default-page-styles;
+  overflow-y: auto;
+  position: relative;
+}
+
+.home-page__title-background {
+  @include title-size-position;
+  background-image: url("../assets/pictures/title-background.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 0;
+
+  filter: brightness(50%);
+}
+
+.home-page__title-container {
+  @include title-size-position;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  transition: font-size 0.2s ease;
+
+  @media (min-width: global.$breakpoint-desktop) {
+    font-size: 3rem;
+  }
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: normal;
+  transition: font-size 0.2s ease;
+
+  @media (min-width: global.$breakpoint-desktop) {
+    font-size: 1.5rem;
+  }
 }

@@ -8,8 +8,11 @@ export function HomePageComponent() {
 
   return (
     <section className="home-page-component">
-      <h1>{primary_title}</h1>
-      <h3>{secondary_title}</h3>
+      <div className="home-page__title-background"></div>
+      <div className="home-page__title-container">
+        <h1>{primary_title}</h1>
+        <h3>{secondary_title}</h3>
+      </div>
     </section>
   );
 }
