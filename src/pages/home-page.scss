@@ -2,9 +2,15 @@
 @use "../partials/global" as global;
 @use "../app.scss";
 
+.home-page__component {
+  @include pages.default-page-styles;
+  overflow-y: auto;
+  position: relative;
+}
+
+//TITLE
 @mixin title-size-position {
   position: absolute;
-
   width: 100%;
   max-height: 600px;
   aspect-ratio: 16 / 10;
@@ -15,13 +21,7 @@
   }
 }
 
-.home-page-component {
-  @include pages.default-page-styles;
-  overflow-y: auto;
-  position: relative;
-}
-
-.home-page__title-background {
+.home-page__title__background {
   @include title-size-position;
   background-image: url("../assets/pictures/title-background.jpg");
   background-size: contain;
@@ -30,9 +30,9 @@
 
   filter: brightness(50%);
 }
-
-.home-page__title-container {
+.home-page__title__container {
   @include title-size-position;
+  position: relative;
   z-index: 1;
   color: var(--font-on-dark);
 
@@ -41,7 +41,6 @@
   justify-content: center;
   flex-direction: column;
 }
-
 h1 {
   font-size: 1.25rem;
   margin-bottom: 1rem;
@@ -54,7 +53,6 @@ h1 {
     font-size: 3rem;
   }
 }
-
 h3 {
   font-size: 0.75rem;
   font-weight: normal;
@@ -65,5 +63,19 @@ h3 {
   }
   @media (min-width: global.$breakpoint-desktop) {
     font-size: 1.5rem;
+  }
+}
+
+//ABOUT ME
+.home-page__aboutme__title {
+  @include pages.topic-title;
+  height: 3rem;
+}
+.home-page__aboutme__text {
+  margin: 2rem;
+  margin-left: 3rem;
+
+  p {
+    margin-bottom: 1rem;
   }
 }
