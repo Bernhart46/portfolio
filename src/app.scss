@@ -1,4 +1,5 @@
 @use "./partials/global" as global;
+@import url("https://fonts.googleapis.com/css?family=Inter");
 
 * {
   box-sizing: border-box;
@@ -8,27 +9,30 @@
 
 body {
   overflow: hidden;
-  font-family: sans-serif;
+  font-family: "Inter", sans-serif;
   position: fixed;
   width: 100%;
+  @include global.color-palette;
 
-  --font-on-light: #323232;
-  --font-on-dark: #e2e2e2;
+  --font-on-light: var(--gray-2);
+  --font-on-dark: var(--gray-4);
 
   &[style*="--theme-mode: dark"] {
-    --background: #131313;
-    --primary-font-color: #e2e2e2;
-    --primary-lighter: #1f1f1f;
-    --primary-darker: #131313;
-    --selected-font: #767676;
+    --background: var(--gray-0);
+    --primary-darker: var(--gray-0);
+    --primary-lighter: var(--gray-1);
+    --selected-font: var(--gray-3);
+    --primary-font-color: var(--gray-4);
+    --page-topic-font-color: var(--gray-4);
   }
 
   &[style*="--theme-mode: light"] {
-    --background: #f8f8f8;
-    --primary-font-color: #323232;
-    --primary-lighter: #003720;
-    --primary-darker: #002113;
-    --selected-font: #6be485;
+    --primary-font-color: var(--gray-2);
+    --background: var(--gray-5);
+    --primary-darker: var(--green-0);
+    --primary-lighter: var(--green-1);
+    --selected-font: var(--green-2);
+    --page-topic-font-color: var(--green-1);
   }
 }
 

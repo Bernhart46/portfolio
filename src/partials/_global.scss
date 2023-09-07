@@ -8,3 +8,18 @@ $global-transition: 0.2s ease;
   align-items: center;
   justify-content: center;
 }
+
+@mixin color-palette {
+  //greys from darkest (0) to brightest (6)
+  --gray-0: #131313;
+  --gray-1: #1f1f1f;
+  --gray-2: #323232;
+  --gray-3: #767676;
+  --gray-4: #e2e2e2;
+  --gray-5: #f8f8f8;
+
+  //greens from darkest (0) to brightest (3)
+  --green-0: #002113;
+  --green-1: #003720;
+  --green-2: #6be485;
+}
