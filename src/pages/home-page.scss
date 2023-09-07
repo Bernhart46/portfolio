@@ -1,5 +1,6 @@
 @use "../partials/pages" as pages;
 @use "../partials/global" as global;
+@use "../app.scss";
 
 @mixin title-size-position {
   position: absolute;
@@ -33,6 +34,7 @@
 .home-page__title-container {
   @include title-size-position;
   z-index: 1;
+  color: var(--font-on-dark);
 
   display: flex;
   align-items: center;
