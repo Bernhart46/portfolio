@@ -3,7 +3,7 @@ import { languageContext } from "../shared/contexts";
 import "./home-page.scss";
 
 export function HomePageComponent() {
-  const { primary_title, secondary_title, about_me } =
+  const { primary_title, secondary_title, about_me, qa } =
     useContext(languageContext)?.home_page || {};
 
   const homePageTitleElement = (
@@ -29,10 +29,17 @@ export function HomePageComponent() {
     </div>
   );
 
+  const homePageQAElement = (
+    <div className="home-page__qa__container">
+      <div className="home-page__aboutme__title">{qa?.title}</div>
+    </div>
+  );
+
   return (
     <section className="home-page__component">
       {homePageTitleElement}
       {homePageAboutmeElement}
+      {homePageQAElement}
     </section>
   );
 }
