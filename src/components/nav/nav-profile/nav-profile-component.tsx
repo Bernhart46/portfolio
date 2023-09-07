@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import profilePicture from "../../../assets/profile.png";
+import profilePicture from "../../../assets/pictures/profile.png";
 import "./nav-profile-component.scss";
 import { languageContext } from "../../../shared/contexts";
 
