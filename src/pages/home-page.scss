@@ -9,20 +9,8 @@
 }
 
 //TITLE
-@mixin title-size-position {
-  position: absolute;
-  width: 100%;
-  max-height: 600px;
-  aspect-ratio: 16 / 10;
-
-  @media (min-width: 1260px) {
-    height: 100%;
-    background-size: cover;
-  }
-}
-
 .home-page__title__background {
-  @include title-size-position;
+  @include pages.title-size-position;
   background-image: url("../assets/pictures/title-background.jpg");
   background-size: contain;
   background-repeat: no-repeat;
@@ -31,7 +19,7 @@
   filter: brightness(50%);
 }
 .home-page__title__container {
-  @include title-size-position;
+  @include pages.title-size-position;
   position: relative;
   z-index: 1;
   color: var(--font-on-dark);
