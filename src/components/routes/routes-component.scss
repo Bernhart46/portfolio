@@ -1,0 +1,21 @@
+.page-enter {
+  opacity: 1;
+  transform: translateX(-120%);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateX(0px);
+  transition: transform 500ms, opacity 500ms;
+}
+
+.page-exit {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.page-exit-active {
+  opacity: 1;
+  transform: translateX(120%);
+  transition: transform 500ms, opacity 500ms;
+}
