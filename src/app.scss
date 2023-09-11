@@ -13,6 +13,7 @@ body {
   position: fixed;
   width: 100%;
   @include global.color-palette;
+  background-color: var(--background);
 
   --font-on-light: var(--gray-2);
   --font-on-dark: var(--gray-4);
