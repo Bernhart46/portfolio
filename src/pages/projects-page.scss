@@ -1,53 +1,5 @@
 @use "../partials/pages" as pages;
-@use "../partials/global" as global;
 
 .projects-page-component {
   @include pages.default-page-styles;
-  overflow-y: auto;
-  position: relative;
-}
-
-.projects-page__title__background {
-  @include pages.title-size-position;
-  background-image: url("../assets/pictures/title-background.jpg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  z-index: 0;
-
-  filter: brightness(50%);
-}
-.projects-page__title__container {
-  @include pages.title-size-position;
-  position: relative;
-  z-index: 1;
-  color: var(--font-on-dark);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-h1 {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-  transition: font-size 0.2s ease;
-
-  @media (min-width: global.$breakpoint-mobile) {
-    font-size: 2rem;
-  }
-  @media (min-width: global.$breakpoint-desktop) {
-    font-size: 3rem;
-  }
-}
-h3 {
-  font-size: 0.75rem;
-  font-weight: normal;
-  transition: font-size 0.2s ease;
-
-  @media (min-width: global.$breakpoint-mobile) {
-    font-size: 1rem;
-  }
-  @media (min-width: global.$breakpoint-desktop) {
-    font-size: 1.5rem;
-  }
 }
