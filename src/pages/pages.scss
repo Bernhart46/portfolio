@@ -5,7 +5,7 @@
 
 .page__title__background {
   @include pages.title-size-position;
-  background-image: url("../assets/pictures/title-background.jpg");
+  background-image: url("../../public/pictures/title-background.jpg");
   background-size: contain;
   background-repeat: no-repeat;
   z-index: 0;
