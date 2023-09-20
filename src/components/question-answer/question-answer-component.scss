@@ -1,0 +1,60 @@
+@use "../../app.scss";
+@use "sass:math";
+
+.question-answer-component {
+  margin: 1rem 2rem;
+  color: var(--font-on-dark);
+}
+
+.question-part {
+  cursor: pointer;
+  position: relative;
+  z-index: 20;
+  min-height: 2.5rem;
+  line-height: 2.5rem;
+  border-radius: 50px;
+  padding: 0 1rem;
+  background-color: var(--primary-lighter);
+}
+
+.question-multiline {
+  line-height: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.answer-part {
+  cursor: default;
+  background-color: var(--primary-lighter2);
+  transform: translateY(-1.5rem);
+  padding: 1rem;
+  padding-top: 2.25rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  display: grid;
+  overflow: hidden;
+  transition: grid-template-rows 0.5s, padding-top 0.5s, padding-bottom 0.5s;
+
+  .answer-text {
+    min-height: 0;
+    transition: opacity 0.5s;
+  }
+
+  &--open {
+    grid-template-rows: 1fr;
+
+    .answer-text {
+      opacity: 1;
+    }
+  }
+
+  &--closed {
+    grid-template-rows: 0fr;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    .answer-text {
+      opacity: 0;
+    }
+  }
+}
