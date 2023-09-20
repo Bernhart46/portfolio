@@ -40,4 +40,9 @@
     border-radius: 100px;
     margin-right: 1rem;
   }
+
+  //smaller than mobile width
+  @media (max-width: 312px) {
+    font-size: 1.5rem;
+  }
 }
