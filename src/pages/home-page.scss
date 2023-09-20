@@ -24,3 +24,12 @@
   margin-top: 5rem;
   margin-bottom: 5rem;
 }
+
+.home-page__qa__title {
+  @include pages.topic-title;
+  height: 3rem;
+}
+
+.home-page__qas {
+  margin-top: 2.5rem;
+}

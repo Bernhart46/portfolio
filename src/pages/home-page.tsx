@@ -33,10 +33,12 @@ export function HomePageComponent() {
 
   const homePageQAElement = qa && (
     <div className="home-page__qa__container">
-      <div className="home-page__aboutme__title">{qa?.title}</div>
-      {qa.qas.map((element, index) => {
-        return <QuestionAnswerComponent key={index} {...element} />;
-      })}
+      <div className="home-page__qa__title">{qa?.title}</div>
+      <div className="home-page__qas">
+        {qa.qas.map((element, index) => {
+          return <QuestionAnswerComponent key={index} {...element} />;
+        })}
+      </div>
     </div>
   );
 
