@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { languageContext } from "../shared/contexts";
 import "./home-page.scss";
 import "./pages.scss";
+import { QuestionAnswerComponent } from "../components/question-answer/question-answer-component";
 
 export function HomePageComponent() {
   const { primary_title, secondary_title, about_me, qa } =
@@ -30,9 +31,12 @@ export function HomePageComponent() {
     </div>
   );
 
-  const homePageQAElement = (
+  const homePageQAElement = qa && (
     <div className="home-page__qa__container">
       <div className="home-page__aboutme__title">{qa?.title}</div>
+      {qa.qas.map((element, index) => {
+        return <QuestionAnswerComponent key={index} {...element} />;
+      })}
     </div>
   );
 
