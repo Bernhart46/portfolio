@@ -26,7 +26,21 @@
       ]
     },
     "qa": {
-      "title": "Kérdések és Válaszok"
+      "title": "Kérdések és Válaszok",
+      "qas": [
+        {
+          "question": "Milyen tapasztalatom van front-end fejlesztésben?",
+          "answer": "Bár nincs korábbi munkatapasztalatom a front-end fejlesztés területén, számos projekten dolgoztam, és rengeteg tapasztalatot szereztem az önálló tanulás révén. Ezek a projektek különböző technológiákat és keretrendszereket öleltek fel, felkészítettek arra, hogy készen álljak a front-end fejlesztés kihívásaira."
+        },
+        {
+          "question": "Milyen állást keresek?",
+          "answer": ""
+        },
+        {
+          "question": "Melyik UI könyvtárat használom a projecteimhez?",
+          "answer": ""
+        }
+      ]
     }
   },
   "projects_page": {

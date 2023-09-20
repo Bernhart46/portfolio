@@ -26,7 +26,21 @@
       ]
     },
     "qa": {
-      "title": "Questions and Answers"
+      "title": "Questions and Answers",
+      "qas": [
+        {
+          "question": "What experience do I have in front-end development?",
+          "answer": "While I don't have prior work experience in front-end development, I have worked on several projects and gained a wealth of experience through self-learning. These projects encompassed various technologies and frameworks, preparing me to be ready for the challenges of front-end development."
+        },
+        {
+          "question": "What kind of job am I looking for?",
+          "answer": ""
+        },
+        {
+          "question": "Which UI library do I use for my projects?",
+          "answer": ""
+        }
+      ]
     }
   },
   "projects_page": {
