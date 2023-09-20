@@ -7,20 +7,15 @@
 }
 
 .question-part {
+  display: flex;
+  align-items: center;
   cursor: pointer;
   position: relative;
   z-index: 20;
   min-height: 2.5rem;
-  line-height: 2.5rem;
   border-radius: 50px;
-  padding: 0 1rem;
+  padding: 0.5rem 1.5rem;
   background-color: var(--primary-lighter);
-}
-
-.question-multiline {
-  line-height: 1rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
 }
 
 .answer-part {
