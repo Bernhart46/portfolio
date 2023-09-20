@@ -18,13 +18,13 @@ export function HomePageComponent() {
     </>
   );
 
-  const homePageAboutmeElement = (
+  const homePageAboutmeElement = about_me && (
     <div className="home-page__aboutme__container">
       <div className="home-page__aboutme__title">
-        <span>{about_me?.title}</span>
+        <span>{about_me.title}</span>
       </div>
       <div className="home-page__aboutme__text">
-        {about_me?.texts.map((paragraph, index) => {
+        {about_me.texts.map((paragraph, index) => {
           return <p key={index}>{paragraph}</p>;
         })}
       </div>
