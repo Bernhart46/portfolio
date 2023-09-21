@@ -4,11 +4,13 @@
 .question-answer-component {
   margin: 1rem 2rem;
   color: var(--font-on-dark);
+  max-width: 600px;
 }
 
 .question-part {
   display: flex;
   align-items: center;
+  justify-content: center;
   cursor: pointer;
   position: relative;
   z-index: 20;
