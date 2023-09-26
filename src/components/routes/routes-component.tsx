@@ -8,6 +8,8 @@ import { SwitchTransition, CSSTransition } from "react-transition-group";
 
 export function RoutesComponent() {
   let location = useLocation();
+  const timeoutValue = 200;
+
   return (
     <Routes>
       <Route
@@ -17,7 +19,7 @@ export function RoutesComponent() {
             <CSSTransition
               key={location.pathname}
               classNames="page"
-              timeout={300}
+              timeout={timeoutValue}
             >
               <Navigate to="/home" />
             </CSSTransition>
@@ -31,7 +33,7 @@ export function RoutesComponent() {
             <CSSTransition
               key={location.pathname}
               classNames="page"
-              timeout={300}
+              timeout={timeoutValue}
             >
               <HomePageComponent />
             </CSSTransition>
@@ -45,7 +47,7 @@ export function RoutesComponent() {
             <CSSTransition
               key={location.pathname}
               classNames="page"
-              timeout={300}
+              timeout={timeoutValue}
             >
               <ProjectsPageComponent />
             </CSSTransition>
@@ -59,7 +61,7 @@ export function RoutesComponent() {
             <CSSTransition
               key={location.pathname}
               classNames="page"
-              timeout={300}
+              timeout={timeoutValue}
             >
               <TechsPageComponent />
             </CSSTransition>
@@ -73,7 +75,7 @@ export function RoutesComponent() {
             <CSSTransition
               key={location.pathname}
               classNames="page"
-              timeout={300}
+              timeout={timeoutValue}
             >
               <h1>Contacts</h1>
             </CSSTransition>
@@ -87,7 +89,7 @@ export function RoutesComponent() {
             <CSSTransition
               key={location.pathname}
               classNames="page"
-              timeout={300}
+              timeout={timeoutValue}
             >
               <Navigate to="/" />
             </CSSTransition>
