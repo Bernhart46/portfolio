@@ -3,3 +3,12 @@
 .projects-page-component {
   @include pages.default-page-styles;
 }
+
+.projects-page__project-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 25px;
+  margin: 25px;
+}
