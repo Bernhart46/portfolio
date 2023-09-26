@@ -8,6 +8,10 @@
   color: var(--primary-font-color);
   overflow-y: auto;
   position: relative;
+
+  @media (max-width: global.$breakpoint-tablet) {
+    padding-bottom: 50px;
+  }
 }
 
 @mixin title-size-position {
