@@ -65,6 +65,8 @@
     aspect-ratio: 1;
     background-color: black;
     border-radius: 0.5rem;
+    background-size: cover;
+    background-position: center;
   }
   @media (max-width: global.$breakpoint-mobile) {
     .project-picture {
