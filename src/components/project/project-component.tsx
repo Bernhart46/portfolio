@@ -8,13 +8,18 @@ type Project = {
   finished: boolean;
 };
 
+type ProjectComponentProps = {
+  project: Project;
+  selectFunction: (input: string) => void;
+  selectedTag?: string;
+};
+
 export function ProjectComponent({
-  title,
-  picture,
-  tags,
-  description,
-  finished,
-}: Project) {
+  project,
+  selectFunction,
+  selectedTag,
+}: ProjectComponentProps) {
+  const { title, picture, tags, description, finished } = project;
   return (
     <section className="project-component">
       <div className="project__container">
@@ -53,7 +58,11 @@ export function ProjectComponent({
       <div className="project-tags">
         {tags.map((tag, index) => {
           return (
-            <span key={index}>
+            <span
+              key={index}
+              onClick={() => selectFunction(tag)}
+              className={`${selectedTag === tag ? "project-tag-active" : ""}`}
+            >
               {tag}
               {index !== tags.length - 1 && ",\u00A0"}
             </span>

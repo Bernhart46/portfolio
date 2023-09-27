@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { languageContext } from "../shared/contexts";
 import "./projects-page.scss";
 import "./pages.scss";
@@ -9,7 +9,16 @@ export function ProjectsPageComponent() {
   const { primary_title, secondary_title } =
     useContext(languageContext)?.projects_page || {};
 
-  console.log(typeof ProjectDatas);
+  const [selectedTag, setSelectedTag] = useState<string | null>(null);
+
+  const selectTag = (input: string) => {
+    if (input === selectedTag) {
+      setSelectedTag(null);
+    } else {
+      setSelectedTag(input);
+    }
+  };
+
   const projectsPageTitleElement = (
     <div className="projects-page-component">
       <div className="page__title__background"></div>
@@ -19,7 +28,26 @@ export function ProjectsPageComponent() {
       </div>
       <div className="projects-page__project-list">
         {ProjectDatas.map((project, index) => {
-          return <ProjectComponent key={index} {...project} />;
+          if (selectedTag) {
+            if (project.tags.includes(selectedTag)) {
+              return (
+                <ProjectComponent
+                  key={index}
+                  project={project}
+                  selectFunction={selectTag}
+                  selectedTag={selectedTag}
+                />
+              );
+            }
+          } else {
+            return (
+              <ProjectComponent
+                key={index}
+                project={project}
+                selectFunction={selectTag}
+              />
+            );
+          }
         })}
       </div>
     </div>
