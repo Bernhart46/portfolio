@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Portfolio",
+    "picture": "",
+    "tags": ["JSX", "TypeScript", "ReactJS", "SCSS"],
+    "finished": true
+  },
+  {
+    "title": "Bern-Assembly",
+    "picture": "",
+    "tags": ["JavaScript"],
+    "finished": false
+  },
+  {
+    "title": "Todo App",
+    "picture": "",
+    "tags": ["JSX", "TypeScript", "ReactJS", "CSS"],
+    "finished": true
+  },
+  {
+    "title": "Wheat Clicker",
+    "picture": "",
+    "tags": ["JSX", "TypeScript", "ReactJS", "CSS"],
+    "finished": false
+  },
+  {
+    "title": "JsWindows",
+    "picture": "",
+    "tags": ["JavaScript", "CSS"],
+    "finished": false
+  }
+]

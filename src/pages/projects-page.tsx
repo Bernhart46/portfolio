@@ -3,11 +3,13 @@ import { languageContext } from "../shared/contexts";
 import "./projects-page.scss";
 import "./pages.scss";
 import { ProjectComponent } from "../components/project/project-component";
+import ProjectDatas from "../assets/project-datas.json";
 
 export function ProjectsPageComponent() {
   const { primary_title, secondary_title } =
     useContext(languageContext)?.projects_page || {};
 
+  console.log(typeof ProjectDatas);
   const projectsPageTitleElement = (
     <div className="projects-page-component">
       <div className="page__title__background"></div>
@@ -16,13 +18,9 @@ export function ProjectsPageComponent() {
         <h3 className="page__title__secondary">{secondary_title}</h3>
       </div>
       <div className="projects-page__project-list">
-        <ProjectComponent />
-        <ProjectComponent />
-        <ProjectComponent />
-        <ProjectComponent />
-        <ProjectComponent />
-        <ProjectComponent />
-        <ProjectComponent />
+        {ProjectDatas.map((project, index) => {
+          return <ProjectComponent key={index} {...project} />;
+        })}
       </div>
     </div>
   );
